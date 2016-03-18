@@ -26,6 +26,18 @@ Route::get('/', function () {
 |
 */
 
+// Web
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+// api
+Route::group(['middleware' => ['api']], function () {
+    //
+});
+
+
+// Admin Dashboard
+Route::group(['middleware' => ['auth'], function(){
+	Route::get('/admin', 'AdminController@index');
+}]);
