@@ -38,6 +38,6 @@ Route::group(['middleware' => ['api']], function () {
 
 
 // Admin Dashboard
-Route::group(['middleware' => ['auth'], function(){
+Route::group(['middleware' => ['auth']], function(){
 	Route::get('/admin', 'AdminController@index');
-}]);
+});
