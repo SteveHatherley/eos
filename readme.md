@@ -2,7 +2,7 @@ eos
 ================
 
 ## What is EOS?
-EOS is an experimental PHP 5.5+ CMF/S built on top of the Laravel 5 framework. EOS is meant to be Page/Document Centric, lightweight, and flexible. The end goal is to allow developers to quickly turn an HTML mockup in to a live pages quickly. Bonus points for HHVM Compability, ya?
+EOS is an experimental PHP 5.5+ CMF/S built on top of the Laravel 5 framework. EOS is meant to be Page/Document Centric, lightweight, and flexible. The end goal is to allow developers to quickly turn  HTML mockups in to live pages quickly. Bonus points for HHVM Compability, ya?
 
 ### Immediate Goals
 * Finish merging various experiments in to: core & plugins
