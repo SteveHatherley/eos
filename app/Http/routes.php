@@ -27,7 +27,8 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+//
+	Route::get('/admin/plugins', 'AdminDashboard@plugins');
 });
 // api
 Route::group(['middleware' => ['api']], function () {
@@ -35,14 +36,35 @@ Route::group(['middleware' => ['api']], function () {
 });
 
 
+function adminDashboardHome(){
+    return view('admin.home');
+}
+
 // Admin Dashboard
-Route::group(['middleware' => ['auth']], function(){
-	Route::get('/admin', 'AdminController@index');
+Route::group(['middleware' => ['web','auth']], function() {
+
+	Route::get('/admin', 'AdminDashboard@index');
+
+	Route::get('/admin/home', 'AdminDashboard@index');
+	Route::get('/admin/dashboard', 'AdminDashboard@index');
+
+	Route::get('/admin/menus', 'AdminDashboard@menus');
+	Route::get('/admin/settings', 'AdminDashboard@settings');
+
+	Route::get('/admin/pages', 'AdminDashboard@pages');
+
+
+	Route::get('/admin/chunks', 'AdminDashboard@chunks');
+	Route::get('/admin/templates', 'AdminDashboard@templates');
+	Route::get('/admin/layouts', 'AdminDashboard@layouts');
+	Route::get('/admin/themes', 'AdminDashboard@themes');
+	Route::get('/admin/css', 'AdminDashboard@css');
+	Route::get('/admin/typography', 'AdminDashboard@typography');
+	Route::get('/admin/glyphs', 'AdminDashboard@glyphs');
+	Route::get('/admin/emojii', 'AdminDashboard@emojii');
 });
 
 
 Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-
     Route::get('/home', 'HomeController@index');
 });
