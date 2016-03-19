@@ -10,9 +10,9 @@
 	<title>Dashboard Title</title>
 
     <!-- CSS -->
-    {{ HTML::style('css/bootstrap.css') }}
-    {{ HTML::style('css/datatables.css') }}
-    {{ HTML::style('css/style.css') }}
+    {!! HTML::style('css/bootstrap.css') !!}
+    {!! HTML::style('css/datatables.css') !!}
+    {!! HTML::style('css/style.css') }}
 
     @yield('styles')
 
@@ -24,7 +24,7 @@
 </head>
 <body>
     @section('nav')
-        @include('admin.')
+        @include('admin.topbav')
     @show
 
 	<div class="container-fluid">
