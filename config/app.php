@@ -159,7 +159,7 @@ return [
         /*
         *
         */
-        Illuminate\Html\HtmlServiceProvider::class
+
     ],
 
     /*
@@ -204,9 +204,7 @@ return [
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
-        'Form'=> Illuminate\Html\FormFacade::class, 
-        'HTML'=> Illuminate\Html\HtmlFacade::class
+        'View' => Illuminate\Support\Facades\View::class
     ],
 
 ];
