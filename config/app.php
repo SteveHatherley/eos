@@ -160,7 +160,7 @@ return [
         *
         */
         Collective\Html\HtmlServiceProvider::class,
-        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Sentinel\SentinelServiceProvider::class, 
         Yajra\Datatables\DatatablesServiceProvider::class
     ],
 
