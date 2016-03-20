@@ -26,10 +26,18 @@ Route::get('/', function () {
 |
 */
 
+// Controller Routes
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+// Public Routes
 Route::group(['middleware' => ['web']], function () {
 //
-	Route::get('/admin/plugins', 'AdminDashboard@plugins');
+	
 });
+
 // api
 Route::group(['middleware' => ['api']], function () {
     //
@@ -41,7 +49,8 @@ function adminDashboardHome(){
 }
 
 // Admin Dashboard
-Route::group(['middleware' => ['web','auth']], function() {
+Route::group(['middleware' => ['web']], function() {
+	Route::auth();
 
 	Route::get('/admin', 'AdminDashboard@index');
 
@@ -50,7 +59,7 @@ Route::group(['middleware' => ['web','auth']], function() {
 
 	Route::get('/admin/menus', 'AdminDashboard@menus');
 	Route::get('/admin/settings', 'AdminDashboard@settings');
-
+	Route::get('/admin/plugins', 'AdminDashboard@plugins');
 	Route::get('/admin/pages', 'AdminDashboard@pages');
 
 
