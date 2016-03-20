@@ -51,3 +51,6 @@ A theme is the collection of LESS/SASS portions of a Template
 
 #### Template
 The whole thing. A collection of layouts, themes (css & images), and javascript resources
+
+## Buy me a beer, or new development tools! 
+<a href='https://pledgie.com/campaigns/31329'><img alt='Click here to lend your support to: EOS - Laravel CMS and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31329.png?skin_name=chrome' border='0' ></a>
