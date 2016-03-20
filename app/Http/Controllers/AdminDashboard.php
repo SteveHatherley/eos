@@ -45,7 +45,7 @@ class AdminDashboard extends Controller
 	    return view('admin.templates');
 	}
 
-	function layout()
+	function layouts()
 	{
 	    return view('admin.layouts');
 	}
