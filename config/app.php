@@ -160,7 +160,7 @@ return [
         *
         */
         Collective\Html\HtmlServiceProvider::class,
-        Sentinel\SentinelServiceProvider::class, 
+        Centaur\CentaurServiceProvider::class, 
         Yajra\Datatables\DatatablesServiceProvider::class
     ],
 

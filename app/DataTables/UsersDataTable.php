@@ -57,7 +57,12 @@ class UsersDataTable extends DataTable
     {
         return [
             'id',
-            // add your columns
+            'ativated',
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+            'last_login',
             'created_at',
             'updated_at',
         ];

@@ -49,6 +49,16 @@ function adminDashboardHome(){
 }
 
 
+// Users
+Route::resource('/admin/users', 'UserController');
+
+// Roles
+Route::resource('/admin/roles', 'RoleController');
+
+// Dashboard
+Route::get('dashboard', ['as' => 'dashboard', 'uses' => function() {
+    return view('centaur.dashboard');
+}]);
 
 // Admin Dashboard
 Route::group(['middleware' => ['web']], function() {
@@ -60,7 +70,7 @@ Route::group(['middleware' => ['web']], function() {
 
 	Route::get('/admin/menus', 'AdminDashboard@menus');
 	Route::get('/admin/settings', 'AdminDashboard@settings');
-	Route::get('/admin/users', 'AdminDashboard@users');
+	// Route::get('/admin/users', 'AdminDashboard@users');
 	Route::get('/admin/groups', 'AdminDashboard@groups');
 	Route::get('/admin/permissions', 'AdminDashboard@permissions');
 	Route::get('/admin/plugins', 'AdminDashboard@plugins');
@@ -74,15 +84,4 @@ Route::group(['middleware' => ['web']], function() {
 	Route::get('/admin/typography', 'AdminDashboard@typography');
 	Route::get('/admin/glyphs', 'AdminDashboard@glyphs');
 	Route::get('/admin/emojii', 'AdminDashboard@emojii');
-});
-
-
-Route::group(['middleware' => 'web'], function () {
-    Route::get('/home', 'HomeController@index');
-});
-
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-
-    Route::get('/home', 'HomeController@index');
 });
