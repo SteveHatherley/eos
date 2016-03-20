@@ -27,10 +27,10 @@ Route::get('/', function () {
 */
 
 // Controller Routes
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+// Route::controllers([
+//     'user/auth' => 'Auth\AuthController',
+//     'user/password' => 'Auth\PasswordController',
+// ]);
 
 // Public Routes
 Route::group(['middleware' => ['web']], function () {
@@ -40,7 +40,7 @@ Route::group(['middleware' => ['web']], function () {
 
 // api
 Route::group(['middleware' => ['api']], function () {
-    //
+	Route::get('/admin/login', 'AdminDashboard@showLogin');
 });
 
 
@@ -48,20 +48,23 @@ function adminDashboardHome(){
     return view('admin.home');
 }
 
+
+
 // Admin Dashboard
 Route::group(['middleware' => ['web']], function() {
 	Route::auth();
 
 	Route::get('/admin', 'AdminDashboard@index');
-
 	Route::get('/admin/home', 'AdminDashboard@index');
 	Route::get('/admin/dashboard', 'AdminDashboard@index');
 
 	Route::get('/admin/menus', 'AdminDashboard@menus');
 	Route::get('/admin/settings', 'AdminDashboard@settings');
+	Route::get('/admin/users', 'AdminDashboard@users');
+	Route::get('/admin/groups', 'AdminDashboard@groups');
+	Route::get('/admin/permissions', 'AdminDashboard@permissions');
 	Route::get('/admin/plugins', 'AdminDashboard@plugins');
 	Route::get('/admin/pages', 'AdminDashboard@pages');
-
 
 	Route::get('/admin/chunks', 'AdminDashboard@chunks');
 	Route::get('/admin/templates', 'AdminDashboard@templates');
@@ -75,5 +78,11 @@ Route::group(['middleware' => ['web']], function() {
 
 
 Route::group(['middleware' => 'web'], function () {
+    Route::get('/home', 'HomeController@index');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
     Route::get('/home', 'HomeController@index');
 });

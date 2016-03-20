@@ -7,6 +7,9 @@
   <li><a href="/admin/home">Home <span class="sr-only">(current)</span></a></li>
   <li {{ (Request::is('/admin/menus') ? 'class="active"' : '') }}><a href="/admin/menus">Menu's</a></li>
   <li><a href="/admin/settings">Settings</a></li>
+  <li><a href="/admin/users">Users</a></li>
+  <li><a href="/admin/groups">Groups</a></li>
+  <li><a href="/admin/permissions">Permissions</a></li>
 </ul>
             <ul class="nav nav-header">
               <li>

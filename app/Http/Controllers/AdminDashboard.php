@@ -27,6 +27,17 @@ class AdminDashboard extends Controller
     	return view('admin.home');
     }
 
+
+    /**
+    * Show Admin Login
+    *
+    * @return \Illuminate\Http\Response
+    */
+    function showLogin()
+    {
+        return view('admin.login');
+    }
+
     /**
      * Show menu administration panel.
      *
@@ -46,6 +57,36 @@ class AdminDashboard extends Controller
 	{
 	    return view('admin.settings');
 	}
+
+    /**
+     * Show application settings panel.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    function users ()
+    {
+        return view('admin.users');
+    }
+
+    /**
+     * Show application settings panel.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    function groups ()
+    {
+        return view('admin.groups');
+    }
+
+    /**
+     * Show application settings panel.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    function permissions ()
+    {
+        return view('admin.permissions');
+    }
 
     /**
      * Show pages administration panel.
