@@ -14,7 +14,7 @@ class AdminDashboard extends Controller
      */
     public function __construct()
     {
-         $this->middleware('sentry.member:Admins');
+         $this->middleware('auth');
     }
     
     /**
@@ -65,6 +65,7 @@ class AdminDashboard extends Controller
      */
     function users ()
     {
+        // Users::
         return view('admin.users');
     }
 
